@@ -9,24 +9,24 @@ async function generateSvg() {
     {
       type: "input",
       name: "text",
-      message: "Enter up to 4 characters for the text:",
-      validate: text => text.length <= 4,
+      message: "Enter 2 characters for the text:",
+      validate: text => text.length <= 2,
     },
     {
       type: "input",
       name: "textColor",
-      message: "Enter a color for the text color :",
+      message: "What color for the text color :",
     },
     {
       type: "list",
       name: "shape",
-      message: "Select a shape:",
+      message: "Pick a shape:",
       choices: shapeChoice,
     },
     {
       type: "input",
       name: "shapeColor",
-      message: "Enter a color for the shape color:",
+      message: "Pick a color for the shape color:",
     },
   ]);
 
@@ -61,10 +61,10 @@ async function generateSvg() {
 </svg>
 `;
 
-  saveLogo(svgLogo);
+  newLogo(svgLogo);
 }
 
-function saveLogo(svgLogo) {
+function newLogo(svgLogo) {
   fs.writeFile("logo.svg", svgLogo, err => {
     console.log("Generated logo.svg");
   });
